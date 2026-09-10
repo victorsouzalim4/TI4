@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07110f">
+<title>InfluencIA — Proposta do aplicativo · Sprint 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --abismo:#07110f;      /* fundo profundo — cor do Vortex */
+    --pinho:#0E4D40;       /* verde institucional */
+    --esmeralda:#2FBF8F;   /* acento vivo */
+    --nevoa:#E8F2EF;       /* verde-claro de apoio */
+    --papel:#FAFCFB;       /* fundo das seções claras */
+    --tinta:#16211E;       /* texto principal */
+    --cinza:#5A6663;       /* texto secundário */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--tinta);background:var(--papel);line-height:1.65}
+  h1,h2,h3{font-family:'Sora',sans-serif}
+  a{color:var(--pinho)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--esmeralda)}
+  section{padding:72px 0}
+  section h2{font-size:1.9rem;font-weight:700;color:var(--pinho);margin:.4rem 0 1.2rem}
+  section p{max-width:70ch;color:var(--tinta)}
+  .sec-alt{background:var(--nevoa)}
+
+  /* ---------- Hero ---------- */
+  header{background:var(--abismo);color:#fff;padding:96px 0 84px;position:relative;overflow:hidden}
+  header::before{content:"";position:absolute;inset:-40%;background:
+    radial-gradient(circle at 78% 18%, rgba(47,191,143,.16), transparent 42%),
+    radial-gradient(circle at 12% 88%, rgba(14,77,64,.7), transparent 45%);pointer-events:none}
+  header .wrap{position:relative}
+  header h1{font-size:clamp(2.6rem,7vw,4.4rem);font-weight:800;letter-spacing:-.02em;margin:.5rem 0 1rem}
+  header h1 .ia{color:var(--esmeralda)}
+  header .sub{font-size:1.15rem;color:#BFD9D0;max-width:56ch}
+  header .meta{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:#6E8F85;margin-top:2.2rem}
+  .botoes{margin-top:2rem;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;font-family:'Sora',sans-serif;font-weight:600;font-size:.95rem;
+       padding:13px 26px;border-radius:999px;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+  .btn:focus-visible{outline:3px solid var(--esmeralda);outline-offset:3px}
+  .btn-vortex{background:var(--esmeralda);color:var(--abismo)}
+  .btn-vortex:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(47,191,143,.35)}
+  .btn-fantasma{border:1.5px solid #3D5A51;color:#CDE4DC}
+  .btn-fantasma:hover{border-color:var(--esmeralda);color:#fff}
+
+  /* ---------- Fluxo (assinatura) ---------- */
+  .fluxo{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:0;margin-top:1.4rem}
+  .no{background:#fff;border:1px solid #D6E5E0;border-radius:16px;padding:22px 20px}
+  .no h3{font-size:1.02rem;color:var(--pinho);margin-bottom:.35rem}
+  .no p{font-size:.92rem;color:var(--cinza)}
+  .seta{display:flex;align-items:center;padding:0 10px;color:var(--esmeralda);font-size:1.5rem}
+  .seta svg{width:34px;height:16px}
+  .seta .tracejado{stroke:var(--esmeralda);stroke-width:2.5;stroke-dasharray:6 6;animation:fluir 1.2s linear infinite}
+  @keyframes fluir{to{stroke-dashoffset:-12}}
+  @media (prefers-reduced-motion: reduce){.seta .tracejado{animation:none}.btn:hover{transform:none}}
+  @media (max-width:720px){.fluxo{grid-template-columns:1fr}.seta{justify-content:center;transform:rotate(90deg);padding:6px 0}}
+
+  /* ---------- Cards / grades ---------- */
+  .grade{display:grid;gap:16px;margin-top:1.4rem}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:720px){.g3,.g2{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid #D6E5E0;border-radius:16px;padding:22px}
+  .sec-alt .card{border-color:#CBDFD8}
+  .card h3{font-size:1rem;color:var(--pinho);margin-bottom:.4rem}
+  .card p{font-size:.93rem;color:var(--cinza)}
+  .card .fn{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;
+            text-transform:uppercase;color:var(--esmeralda);display:block;margin-bottom:.5rem}
+
+  ul.lista{margin:1rem 0 0 1.2rem;max-width:70ch}
+  ul.lista li{margin-bottom:.55rem}
+
+  /* ---------- Vortex ---------- */
+  .vortex-box{background:var(--abismo);color:#DCEDE6;border-radius:20px;padding:36px;
+              display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;margin-top:1.4rem}
+  .vortex-box h3{font-size:1.35rem;color:#fff;margin-bottom:.4rem}
+  .vortex-box p{color:#9FCABE;font-size:.95rem;max-width:52ch}
+
+  /* ---------- Cronograma ---------- */
+  .crono{margin-top:1.4rem;border-left:2px solid var(--pinho);padding-left:26px;display:grid;gap:18px}
+  .crono .item{position:relative}
+  .crono .item::before{content:"";position:absolute;left:-33px;top:6px;width:12px;height:12px;
+                       border-radius:50%;background:var(--esmeralda);border:2.5px solid var(--papel)}
+  .crono .tag{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.1em;
+              text-transform:uppercase;color:var(--pinho);font-weight:500}
+  .crono p{font-size:.95rem}
+
+  /* ---------- Rodapé ---------- */
+  footer{background:var(--abismo);color:#9FCABE;padding:56px 0;text-align:center}
+  footer .nomes{font-family:'Sora',sans-serif;color:#fff;font-weight:600;margin:.6rem 0 1.4rem}
+  footer a.btn{margin-top:.4rem}
+  footer .disc{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#6E8F85;margin-top:2rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Sprint 1 · Proposta do aplicativo</span>
+    <h1>Influenc<span class="ia">IA</span></h1>
+    <p class="sub">Inteligência de tendências e geração de roteiros para criadores de conteúdo —
+       do comentário do público ao roteiro pronto para gravar.</p>
+    <div class="botoes">
+      <a class="btn btn-vortex" href="https://share.google/fmXDxsC3Rm0tmRQUD" target="_blank" rel="noopener">Explorar a biblioteca Vortex ↗</a>
+      <a class="btn btn-fantasma" href="#proposta">Ler a proposta</a>
+    </div>
+    <p class="meta">Disciplina: Trabalho Interdisciplinar IV — Dispositivos Móveis</p>
+  </div>
+</header>
+
+<section id="nome">
+  <div class="wrap">
+    <span class="eyebrow">1 · Nome do projeto</span>
+    <h2>InfluencIA</h2>
+    <p><strong>influencer + IA</strong>. O nome sintetiza a proposta do aplicativo: colocar a
+       inteligência artificial a serviço de influenciadores digitais, transformando o volume de
+       comentários das redes sociais em conhecimento acionável sobre tendências e em roteiros
+       prontos para produção de conteúdo.</p>
+  </div>
+</section>
+
+<section class="sec-alt" id="equipe">
+  <div class="wrap">
+    <span class="eyebrow">2 · Componentes do time</span>
+    <h2>Equipe</h2>
+    <div class="grade g3">
+      <div class="card"><span class="fn">Product Owner</span><h3>André Luis</h3><p>Visão do produto, backlog e priorização.</p></div>
+      <div class="card"><span class="fn">Dev Mobile · Flutter</span><h3>Débora Luiza</h3><p>Interface e experiência do usuário no app.</p></div>
+      <div class="card"><span class="fn">Designer UX/UI</span><h3>Douglas</h3><p>Prototipação, identidade visual e usabilidade.</p></div>
+      <div class="card"><span class="fn">Engenharia de IA</span><h3>João Paulo</h3><p>Análise de comentários e geração de roteiros.</p></div>
+      <div class="card"><span class="fn">Dev Back-end</span><h3>Victor</h3><p>Desenvolvimento do motor Vortex.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="proposta">
+  <div class="wrap">
+    <span class="eyebrow">3 · Proposta de desenvolvimento</span>
+    <h2>O problema</h2>
+    <p>Criadores de conteúdo dependem de estar sempre alinhados às tendências para manter relevância.
+       Hoje, descobrir o que a audiência quer exige ler manualmente milhares de comentários,
+       acompanhar várias redes ao mesmo tempo e reagir antes que a tendência perca força —
+       um processo demorado, sujeito a vieses e inviável de escalar.</p>
+    <div class="grade g3">
+      <div class="card"><h3>Excesso de informação</h3><p>Milhares de comentários dispersos em várias plataformas.</p></div>
+      <div class="card"><h3>Janela curta</h3><p>Tendências surgem e desaparecem em poucos dias.</p></div>
+      <div class="card"><h3>Bloqueio criativo</h3><p>Identificar o tema não garante saber como abordá-lo em vídeo.</p></div>
+    </div>
+
+    <h2 style="margin-top:3rem">A solução</h2>
+    <p>O InfluencIA automatiza o ciclo completo dentro de um único aplicativo móvel:</p>
+    <div class="fluxo" aria-label="Fluxo do aplicativo: análise, tendências, roteiro">
+      <div class="no"><h3>Análise</h3><p>Processamento dos comentários do público: temas, termos recorrentes e sentimento.</p></div>
+      <div class="seta" aria-hidden="true"><svg viewBox="0 0 34 16"><line class="tracejado" x1="0" y1="8" x2="26" y2="8"/><path d="M26 2 L34 8 L26 14" fill="none" stroke="#2FBF8F" stroke-width="2.5"/></svg></div>
+      <div class="no"><h3>Tendências</h3><p>Identificação e ranqueamento dos tópicos em alta entre a audiência.</p></div>
+      <div class="seta" aria-hidden="true"><svg viewBox="0 0 34 16"><line class="tracejado" x1="0" y1="8" x2="26" y2="8"/><path d="M26 2 L34 8 L26 14" fill="none" stroke="#2FBF8F" stroke-width="2.5"/></svg></div>
+      <div class="no"><h3>Roteiro</h3><p>Geração automática de roteiros baseados nos tópicos, no estilo do influenciador.</p></div>
+    </div>
+
+    <div class="vortex-box">
+      <div>
+        <span class="eyebrow">Motor de processamento</span>
+        <h3>Vortex — fluxo vivo</h3>
+        <p>Motor que será desenvolvido pela própria equipe, responsável pela ingestão e análise dos
+           comentários. Será a camada de inteligência sobre a qual o app será construído.</p>
+      </div>
+      <a class="btn btn-vortex" href="https://share.google/fmXDxsC3Rm0tmRQUD" target="_blank" rel="noopener">Abrir a biblioteca ↗</a>
+    </div>
+
+    <h2 style="margin-top:3rem">Tecnologias previstas</h2>
+    <ul class="lista">
+      <li><strong>Flutter</strong> — aplicativo móvel multiplataforma (Android/iOS).</li>
+      <li><strong>Vortex</strong> — motor em desenvolvimento para análise de comentários e identificação de tópicos.</li>
+      <li><strong>IA / PLN</strong> — análise de sentimento, agrupamento de tópicos e geração de roteiros.</li>
+      <li><strong>Figma</strong> — prototipação e design das telas.</li>
+      <li><strong>APIs das redes sociais</strong> — comentários do YouTube, Instagram e TikTok, conforme disponibilidade.</li>
+    </ul>
+
+    <h2 style="margin-top:3rem">IA no app</h2>
+    <p>A IA atua em dois momentos: na <strong>análise</strong>, com processamento de linguagem natural
+       para agrupar assuntos, medir sentimento e detectar tendências emergentes; e na
+       <strong>geração</strong>, produzindo roteiros estruturados — gancho, desenvolvimento e chamada
+       para ação. A relação entre tópicos, termos e comentários pode ainda ser modelada como um
+       <strong>grafo</strong>, permitindo visualizar conexões entre assuntos e recomendar temas correlatos.</p>
+
+    <h2 style="margin-top:3rem">Aplicativos correlatos</h2>
+    <div class="grade g2">
+      <div class="card"><h3>Google Trends</h3><p>Tendências gerais de busca — mas não analisa a audiência específica do criador.</p></div>
+      <div class="card"><h3>VidIQ / TubeBuddy</h3><p>Métricas e SEO para YouTube — sem geração de roteiro.</p></div>
+      <div class="card"><h3>IAs genéricas</h3><p>Geram texto — mas sem partir de dados reais dos comentários.</p></div>
+      <div class="card"><h3>Diferencial do InfluencIA</h3><p>Une análise da própria audiência e produção de roteiro em um único fluxo mobile.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt" id="objetivo">
+  <div class="wrap">
+    <span class="eyebrow">4 · Objetivo do app</span>
+    <h2>O que é e para que serve</h2>
+    <p><strong>O que é:</strong> um aplicativo móvel de inteligência de conteúdo que analisa os
+       comentários recebidos pelo criador, identifica os tópicos em alta entre sua audiência e gera
+       roteiros baseados nesses tópicos.</p>
+    <p style="margin-top:.8rem"><strong>Para que serve:</strong> para que influenciadores tomem
+       decisões de conteúdo guiadas por dados reais da própria audiência — o app transforma o
+       feedback do público em pauta, e a pauta em roteiro pronto para gravação.</p>
+    <ul class="lista">
+      <li>Automatizar a leitura de grandes volumes de comentários.</li>
+      <li>Ranquear os assuntos que mais engajam a audiência.</li>
+      <li>Gerar roteiros que aproveitam a janela de cada tendência.</li>
+      <li>Aumentar a constância de publicação e o alcance dos criadores.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="publico">
+  <div class="wrap">
+    <span class="eyebrow">5 · Público-alvo</span>
+    <h2>Quem se beneficia</h2>
+    <div class="grade g2">
+      <div class="card"><h3>Influenciadores e criadores de conteúdo</h3><p>YouTube, Instagram e TikTok — o beneficiário principal do app.</p></div>
+      <div class="card"><h3>Criadores iniciantes</h3><p>Ainda sem equipe; precisam de apoio para definir pautas e estruturar roteiros.</p></div>
+      <div class="card"><h3>Social media e gestores de conteúdo</h3><p>Administram perfis de terceiros ou de marcas.</p></div>
+      <div class="card"><h3>Agências de marketing de influência</h3><p>Usam a análise de tópicos para orientar campanhas de seus criadores.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt" id="cronograma">
+  <div class="wrap">
+    <span class="eyebrow">Planejamento</span>
+    <h2>Cronograma das sprints</h2>
+    <div class="crono">
+      <div class="item"><span class="tag">Sprint 1</span><p>Proposta do aplicativo e definição do escopo.</p></div>
+      <div class="item"><span class="tag">Sprint 2</span><p>Prototipação das telas (Figma) e definição dos requisitos.</p></div>
+      <div class="item"><span class="tag">Sprint 3</span><p>Desenvolvimento das telas principais em Flutter.</p></div>
+      <div class="item"><span class="tag">Sprint 4</span><p>Desenvolvimento do motor Vortex e funcionalidades de IA.</p></div>
+      <div class="item"><span class="tag">Sprint 5</span><p>Testes, ajustes finais e apresentação do aplicativo.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="eyebrow">Equipe InfluencIA</span>
+    <p class="nomes">André Luis · Débora Luiza · Douglas · João Paulo · Victor</p>
+    <a class="btn btn-vortex" href="https://share.google/fmXDxsC3Rm0tmRQUD" target="_blank" rel="noopener">Biblioteca Vortex ↗</a>
+    <p class="disc">Trabalho Interdisciplinar IV — Dispositivos Móveis · Sprint 1</p>
+  </div>
+</footer>
+
+</body>
+</html>
