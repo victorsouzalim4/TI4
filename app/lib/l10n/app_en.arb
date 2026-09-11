@@ -1,0 +1,9 @@
+{
+  "@@locale": "en",
+  "appTitle": "InfluencIA",
+  "homeTitle": "Trending topics",
+  "homeMentions": "{count, plural, one{{count} mention} other{{count} mentions}}",
+  "homeErrorMessage": "We could not load the trending topics.",
+  "retryButton": "Try again",
+  "environmentBadgeLabel": "Environment: {environment}"
+}

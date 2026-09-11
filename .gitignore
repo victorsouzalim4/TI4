@@ -1,1 +1,8 @@
+# Específico do projeto (entrada pré-existente)
 fotos/
+
+# Lixo de SO / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log

@@ -1,0 +1,141 @@
+# Taskfile do monorepo InfluencIA — https://taskfile.dev
+# Comandos escritos em sh POSIX portável (Task embute o interpretador mvdan/sh no Windows).
+version: '3'
+
+vars:
+  APP_DIR: app
+  FLAVOR: '{{.FLAVOR | default "dev"}}'
+  AVD: '{{.AVD | default "Pixel_9"}}'
+
+tasks:
+  default:
+    desc: Lista todas as tasks disponíveis
+    aliases: [help]
+    silent: true
+    cmds:
+      - task --list
+
+  setup:
+    desc: Prepara o projeto (pub get + gen-l10n)
+    dir: '{{.APP_DIR}}'
+    cmds:
+      - flutter pub get
+      - flutter gen-l10n
+
+  doctor:
+    desc: Diagnóstico detalhado do ambiente Flutter
+    cmds:
+      - flutter doctor -v
+
+  get:
+    desc: Baixa as dependências (flutter pub get)
+    dir: '{{.APP_DIR}}'
+    cmds:
+      - flutter pub get
+
+  clean:
+    desc: Limpa artefatos de build e baixa as dependências de novo
+    dir: '{{.APP_DIR}}'
+    cmds:
+      - flutter clean
+      - flutter pub get
+
+  run:
+    desc: Roda o app (FLAVOR=dev|staging|prod, DEVICE=<id> opcional)
+    dir: '{{.APP_DIR}}'
+    preconditions:
+      - sh: 'test -f env/{{.FLAVOR}}.json'
+        msg: 'Arquivo env/{{.FLAVOR}}.json não existe. Use FLAVOR=dev|staging|prod.'
+    cmds:
+      - 'flutter run --dart-define-from-file=env/{{.FLAVOR}}.json{{if .DEVICE}} -d {{.DEVICE}}{{end}}'
+
+  run:web:
+    desc: Roda o app no Chrome (FLAVOR=dev|staging|prod)
+    dir: '{{.APP_DIR}}'
+    preconditions:
+      - sh: 'test -f env/{{.FLAVOR}}.json'
+        msg: 'Arquivo env/{{.FLAVOR}}.json não existe. Use FLAVOR=dev|staging|prod.'
+    cmds:
+      - 'flutter run -d chrome --dart-define-from-file=env/{{.FLAVOR}}.json'
+
+  devices:
+    desc: Lista os devices conectados
+    cmds:
+      - flutter devices
+
+  emu:list:
+    desc: Lista os emuladores/AVDs disponíveis
+    cmds:
+      - flutter emulators
+
+  emu:start:
+    desc: Inicia o emulador Android (AVD={{.AVD}} por padrão)
+    cmds:
+      - 'flutter emulators --launch {{.AVD}}'
+
+  analyze:
+    desc: Analisa o código (flutter analyze)
+    dir: '{{.APP_DIR}}'
+    cmds:
+      - flutter analyze
+
+  format:
+    desc: Formata o código (dart format)
+    dir: '{{.APP_DIR}}'
+    cmds:
+      - dart format .
+
+  lint:
+    desc: Analisa e falha se houver diff de formatação (CI-friendly)
+    dir: '{{.APP_DIR}}'
+    cmds:
+      - flutter analyze
+      - dart format --set-exit-if-changed .
+
+  test:
+    desc: Roda os testes com cobertura
+    dir: '{{.APP_DIR}}'
+    cmds:
+      - flutter test --coverage
+
+  gen:
+    desc: Roda o build_runner (freezed/riverpod/json_serializable)
+    dir: '{{.APP_DIR}}'
+    cmds:
+      - dart run build_runner build --delete-conflicting-outputs
+
+  gen:watch:
+    desc: Roda o build_runner em modo watch
+    dir: '{{.APP_DIR}}'
+    cmds:
+      - dart run build_runner watch --delete-conflicting-outputs
+
+  l10n:
+    desc: Gera as classes de localização (gen-l10n)
+    dir: '{{.APP_DIR}}'
+    cmds:
+      - flutter gen-l10n
+
+  build:apk:
+    desc: Gera APK release (FLAVOR=dev|staging|prod)
+    dir: '{{.APP_DIR}}'
+    preconditions:
+      - sh: 'test -f env/{{.FLAVOR}}.json'
+        msg: 'Arquivo env/{{.FLAVOR}}.json não existe. Use FLAVOR=dev|staging|prod.'
+    cmds:
+      - 'flutter build apk --release --dart-define-from-file=env/{{.FLAVOR}}.json'
+
+  build:aab:
+    desc: Gera App Bundle release (FLAVOR=dev|staging|prod)
+    dir: '{{.APP_DIR}}'
+    preconditions:
+      - sh: 'test -f env/{{.FLAVOR}}.json'
+        msg: 'Arquivo env/{{.FLAVOR}}.json não existe. Use FLAVOR=dev|staging|prod.'
+    cmds:
+      - 'flutter build appbundle --release --dart-define-from-file=env/{{.FLAVOR}}.json'
+
+  upgrade:
+    desc: Atualiza dependências (pub upgrade --major-versions)
+    dir: '{{.APP_DIR}}'
+    cmds:
+      - flutter pub upgrade --major-versions

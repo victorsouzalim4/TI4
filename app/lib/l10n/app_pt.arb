@@ -1,0 +1,37 @@
+{
+  "@@locale": "pt",
+  "appTitle": "InfluencIA",
+  "@appTitle": {
+    "description": "Nome do aplicativo, usado como titulo da janela/aba."
+  },
+  "homeTitle": "Tópicos em alta",
+  "@homeTitle": {
+    "description": "Titulo da tela inicial com o ranking de topicos da audiencia."
+  },
+  "homeMentions": "{count, plural, one{{count} menção} other{{count} menções}}",
+  "@homeMentions": {
+    "description": "Quantidade de mencoes de um topico nos comentarios.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeErrorMessage": "Não foi possível carregar os tópicos em alta.",
+  "@homeErrorMessage": {
+    "description": "Mensagem exibida quando o carregamento dos topicos falha."
+  },
+  "retryButton": "Tentar novamente",
+  "@retryButton": {
+    "description": "Rotulo do botao que refaz o carregamento apos um erro."
+  },
+  "environmentBadgeLabel": "Ambiente: {environment}",
+  "@environmentBadgeLabel": {
+    "description": "Rotulo de acessibilidade do selo de ambiente no AppBar.",
+    "placeholders": {
+      "environment": {
+        "type": "String"
+      }
+    }
+  }
+}
