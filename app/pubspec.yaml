@@ -10,6 +10,7 @@ environment:
   sdk: ^3.13.3
 
 dependencies:
+  animated_bottom_navigation_bar: ^1.4.1
   dio: ^5.11.1
   flutter:
     sdk: flutter
