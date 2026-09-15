@@ -17,32 +17,50 @@ Dicas:
 - Escolha o device com `DEVICE=<id> task run` (ids em `task devices`).
 - O default de `task emu:start` é o AVD `Pixel_9` (Pixel 9, Android 36 · google_apis · x86_64, criado no bootstrap deste repo); use outro com `AVD=<id> task emu:start` (ids em `task emu:list`).
 
+## Telas e navegação
+
+Três abas na bottom bar (`animated_bottom_navigation_bar`), cada uma com sua própria pilha (`StatefulShellRoute` do go_router):
+
+| Rota | Tela | O que faz |
+| --- | --- | --- |
+| `/trends` | Tendências | Ranking de tópicos em alta com menções e sentimento |
+| `/trends/:topicId` | Análise | Sentimento, termos mais citados, comentários e botão **Gerar roteiro** |
+| `/scripts` | Roteiros | Lista dos roteiros gerados (estado vazio quando não há nenhum) |
+| `/scripts/:scriptId` | Roteiro | Gancho, desenvolvimento, chamada para ação; **Copiar** e **Regenerar**. Abre em tela cheia, sem a bottom bar |
+| `/profile` | Perfil | Dados do influenciador, plataformas conectadas e estilo do roteiro |
+
+Todos os dados vêm de datasources mock em memória (`Mock*DataSource`) com um pequeno atraso para simular a rede. A paleta (tema escuro único) fica em `app/theme.dart` (`AppColors`).
+
 ## Arquitetura
 
 ```
 app/lib/
 ├── main.dart            # bootstrap (ProviderScope + runApp)
-├── app/                 # MaterialApp.router, tema, go_router
-├── core/                # config por dart-define, errors, network (dio + interceptors), utils, extensions
+├── app/                 # MaterialApp.router, tema (AppColors/AppTheme), go_router, AppShell (bottom bar)
+├── core/                # config por dart-define, errors, network (dio + interceptors), utils (Result + guard), extensions
 ├── features/
-│   └── <feature>/
-│       ├── data/        # models (freezed/json_serializable), datasources, repository impl
-│       ├── domain/      # entities, repositórios abstratos, usecases
+│   ├── topics/          # tendências + análise de tópico
+│   ├── scripts/         # roteiros: lista, detalhe, geração/regeneração
+│   └── profile/         # perfil e plataformas conectadas
+│       ├── data/        # models (freezed/json_serializable), datasources (contrato + mock), repository impl
+│       ├── domain/      # entities, repositórios abstratos, usecases (só quando há regra de negócio)
 │       └── presentation/# providers (riverpod) + pages/widgets
-└── shared/              # widgets reutilizáveis entre features
+└── shared/              # widgets reutilizáveis (AsyncView, AppErrorView, SectionTitle)
 ```
 
 Regra de dependência: `presentation -> domain <- data` — a camada de domínio não conhece as outras duas. Estado com Riverpod (codegen), modelos imutáveis com freezed/json_serializable, i18n via arquivos `.arb` com pt-BR como idioma default.
 
+Repositórios envolvem a chamada ao datasource em `guard()` (`core/utils/result.dart`), que converte qualquer exceção na `Failure` equivalente; as pages renderizam `AsyncValue` com `AsyncView` (loading / erro com retry / dados).
+
 ## Como adicionar uma feature
 
-1. Crie `features/<nome>/domain/` com a entity, o repositório abstrato e o usecase.
-2. Crie `features/<nome>/data/` com o model (freezed), o datasource e a implementação do repositório.
-3. Crie `features/<nome>/presentation/` com os providers Riverpod e a page.
-4. Registre a rota em `app/router.dart`.
+1. Crie `features/<nome>/domain/` com a entity e o repositório abstrato (usecase apenas se houver regra além de buscar/mapear).
+2. Crie `features/<nome>/data/` com o model (freezed), o contrato do datasource, o `Mock<Nome>DataSource` e a implementação do repositório usando `guard()`.
+3. Crie `features/<nome>/presentation/` com os providers Riverpod e a page (use `AsyncView` para os estados).
+4. Registre a rota em `app/router.dart` (dentro da branch da aba ou com `parentNavigatorKey` raiz para tela cheia).
 5. Adicione as strings nos arquivos `.arb`.
 6. Rode `task gen` (build_runner) e `task l10n` (gen-l10n).
-7. Escreva os testes em `test/features/<nome>/`.
+7. Escreva os testes em `test/features/<nome>/` (fakes compartilhados em `test/helpers/`).
 
 ## Decisões
 
