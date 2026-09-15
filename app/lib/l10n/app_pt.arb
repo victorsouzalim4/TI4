@@ -27,189 +27,20 @@
     "description": "Explicacao da tela de espera das abas ainda nao implementadas."
   },
 
-  "retryButton": "Tentar novamente",
-  "@retryButton": {
-    "description": "Rotulo do botao que refaz o carregamento apos um erro."
-  },
-  "environmentBadgeLabel": "Ambiente: {environment}",
-  "@environmentBadgeLabel": {
-    "description": "Rotulo de acessibilidade do selo de ambiente no AppBar.",
-    "placeholders": {
-      "environment": {
-        "type": "String"
-      }
-    }
-  },
-  "mentions": "{count, plural, one{{count} menção} other{{count} menções}}",
-  "@mentions": {
-    "description": "Quantidade de mencoes de um topico nos comentarios.",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "sentimentPositive": "Positivo",
-  "@sentimentPositive": {
-    "description": "Rotulo do sentimento positivo."
-  },
-  "sentimentNeutral": "Neutro",
-  "@sentimentNeutral": {
-    "description": "Rotulo do sentimento neutro."
-  },
-  "sentimentNegative": "Negativo",
-  "@sentimentNegative": {
-    "description": "Rotulo do sentimento negativo."
-  },
-
-  "trendsTitle": "Tendências",
-  "@trendsTitle": {
-    "description": "Titulo da aba com o ranking de topicos da audiencia."
-  },
-  "trendsSubtitle": "Em alta na sua audiência",
-  "@trendsSubtitle": {
-    "description": "Frase de apoio acima do ranking de topicos."
-  },
-  "trendsErrorMessage": "Não foi possível carregar os tópicos em alta.",
-  "@trendsErrorMessage": {
-    "description": "Mensagem exibida quando o carregamento dos topicos falha."
-  },
-
-  "analysisTitle": "Análise",
-  "@analysisTitle": {
-    "description": "Titulo do AppBar da tela de analise de um topico."
-  },
-  "analysisErrorMessage": "Não foi possível carregar a análise do tópico.",
-  "@analysisErrorMessage": {
-    "description": "Mensagem exibida quando o carregamento da analise falha."
-  },
-  "analysisSentimentSection": "Sentimento dos comentários",
-  "@analysisSentimentSection": {
-    "description": "Titulo da secao com a distribuicao de sentimento."
-  },
-  "analysisTermsSection": "Termos mais citados",
-  "@analysisTermsSection": {
-    "description": "Titulo da secao com os termos recorrentes."
-  },
-  "analysisCommentsSection": "O que a audiência diz",
-  "@analysisCommentsSection": {
-    "description": "Titulo da secao com comentarios representativos."
-  },
-
-  "generateScriptButton": "Gerar roteiro",
-  "@generateScriptButton": {
-    "description": "Rotulo do botao que gera um roteiro para o topico."
-  },
-  "generateScriptLoading": "Gerando roteiro…",
-  "@generateScriptLoading": {
-    "description": "Rotulo do botao enquanto o roteiro esta sendo gerado."
-  },
-  "generateScriptError": "Não foi possível gerar o roteiro.",
-  "@generateScriptError": {
-    "description": "Mensagem exibida quando a geracao do roteiro falha."
-  },
-
-  "scriptsTitle": "Roteiros",
-  "@scriptsTitle": {
-    "description": "Titulo da aba com a lista de roteiros gerados."
-  },
-  "scriptsErrorMessage": "Não foi possível carregar os roteiros.",
-  "@scriptsErrorMessage": {
-    "description": "Mensagem exibida quando o carregamento dos roteiros falha."
-  },
-  "scriptsEmptyTitle": "Nenhum roteiro ainda",
-  "@scriptsEmptyTitle": {
-    "description": "Titulo do estado vazio da lista de roteiros."
-  },
-  "scriptsEmptyMessage": "Escolha um tópico em alta e gere seu primeiro roteiro.",
-  "@scriptsEmptyMessage": {
-    "description": "Orientacao do estado vazio da lista de roteiros."
-  },
-  "scriptsGeneratedOn": "Gerado em {date}",
-  "@scriptsGeneratedOn": {
-    "description": "Data de geracao de um roteiro na lista.",
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-
-  "scriptTitle": "Roteiro",
-  "@scriptTitle": {
-    "description": "Titulo do AppBar da tela de um roteiro."
-  },
-  "scriptErrorMessage": "Não foi possível carregar o roteiro.",
-  "@scriptErrorMessage": {
-    "description": "Mensagem exibida quando o carregamento do roteiro falha."
-  },
-  "scriptHookSection": "Gancho",
-  "@scriptHookSection": {
-    "description": "Titulo da secao com a abertura do roteiro."
-  },
-  "scriptDevelopmentSection": "Desenvolvimento",
-  "@scriptDevelopmentSection": {
-    "description": "Titulo da secao com o corpo do roteiro."
-  },
-  "scriptCtaSection": "Chamada para ação",
-  "@scriptCtaSection": {
-    "description": "Titulo da secao com o fechamento do roteiro."
-  },
-  "copyButton": "Copiar",
-  "@copyButton": {
-    "description": "Rotulo do botao que copia o roteiro."
-  },
-  "regenerateButton": "Regenerar",
-  "@regenerateButton": {
-    "description": "Rotulo do botao que gera uma nova versao do roteiro."
-  },
-  "scriptCopied": "Roteiro copiado",
-  "@scriptCopied": {
-    "description": "Confirmacao exibida apos copiar o roteiro."
-  },
-  "regenerateError": "Não foi possível regenerar o roteiro.",
-  "@regenerateError": {
-    "description": "Mensagem exibida quando a regeneracao falha."
-  },
-
   "profileTitle": "Perfil",
   "@profileTitle": {
     "description": "Titulo da aba de perfil."
   },
-  "profileErrorMessage": "Não foi possível carregar o perfil.",
-  "@profileErrorMessage": {
-    "description": "Mensagem exibida quando o carregamento do perfil falha."
+  "profileAboutSection": "Sobre",
+  "@profileAboutSection": {
+    "description": "Titulo da secao com os dados basicos do influenciador."
   },
-  "profileCommentsAnalyzed": "Comentários analisados",
-  "@profileCommentsAnalyzed": {
-    "description": "Rotulo da estatistica de comentarios analisados."
+  "profileNicheLabel": "Nicho",
+  "@profileNicheLabel": {
+    "description": "Rotulo do nicho de conteudo."
   },
-  "profileScriptsGenerated": "Roteiros gerados",
-  "@profileScriptsGenerated": {
-    "description": "Rotulo da estatistica de roteiros gerados."
-  },
-  "profilePlatformsSection": "Plataformas conectadas",
-  "@profilePlatformsSection": {
-    "description": "Titulo da secao com as redes sociais."
-  },
-  "profileNotConnected": "Não conectado",
-  "@profileNotConnected": {
-    "description": "Estado de uma plataforma ainda nao conectada."
-  },
-  "profileConnect": "Conectar",
-  "@profileConnect": {
-    "description": "Rotulo do botao que inicia a conexao com uma plataforma."
-  },
-  "profileConnectSoon": "A conexão com as plataformas chega em breve.",
-  "@profileConnectSoon": {
-    "description": "Aviso exibido ao tentar conectar uma plataforma (mock)."
-  },
-  "profileStyleSection": "Estilo do roteiro",
-  "@profileStyleSection": {
-    "description": "Titulo da secao com o tom de voz dos roteiros."
-  },
-  "profileStyleHint": "Tom de voz usado pela IA ao escrever seus roteiros",
-  "@profileStyleHint": {
-    "description": "Explicacao do campo de tom de voz."
+  "profilePlatformLabel": "Plataforma principal",
+  "@profilePlatformLabel": {
+    "description": "Rotulo da rede social principal."
   }
 }

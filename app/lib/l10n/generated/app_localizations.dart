@@ -134,251 +134,29 @@ abstract class AppLocalizations {
   /// **'Essa parte do app ainda está sendo construída.'**
   String get comingSoonMessage;
 
-  /// Rotulo do botao que refaz o carregamento apos um erro.
-  ///
-  /// In pt, this message translates to:
-  /// **'Tentar novamente'**
-  String get retryButton;
-
-  /// Rotulo de acessibilidade do selo de ambiente no AppBar.
-  ///
-  /// In pt, this message translates to:
-  /// **'Ambiente: {environment}'**
-  String environmentBadgeLabel(String environment);
-
-  /// Quantidade de mencoes de um topico nos comentarios.
-  ///
-  /// In pt, this message translates to:
-  /// **'{count, plural, one{{count} menção} other{{count} menções}}'**
-  String mentions(int count);
-
-  /// Rotulo do sentimento positivo.
-  ///
-  /// In pt, this message translates to:
-  /// **'Positivo'**
-  String get sentimentPositive;
-
-  /// Rotulo do sentimento neutro.
-  ///
-  /// In pt, this message translates to:
-  /// **'Neutro'**
-  String get sentimentNeutral;
-
-  /// Rotulo do sentimento negativo.
-  ///
-  /// In pt, this message translates to:
-  /// **'Negativo'**
-  String get sentimentNegative;
-
-  /// Titulo da aba com o ranking de topicos da audiencia.
-  ///
-  /// In pt, this message translates to:
-  /// **'Tendências'**
-  String get trendsTitle;
-
-  /// Frase de apoio acima do ranking de topicos.
-  ///
-  /// In pt, this message translates to:
-  /// **'Em alta na sua audiência'**
-  String get trendsSubtitle;
-
-  /// Mensagem exibida quando o carregamento dos topicos falha.
-  ///
-  /// In pt, this message translates to:
-  /// **'Não foi possível carregar os tópicos em alta.'**
-  String get trendsErrorMessage;
-
-  /// Titulo do AppBar da tela de analise de um topico.
-  ///
-  /// In pt, this message translates to:
-  /// **'Análise'**
-  String get analysisTitle;
-
-  /// Mensagem exibida quando o carregamento da analise falha.
-  ///
-  /// In pt, this message translates to:
-  /// **'Não foi possível carregar a análise do tópico.'**
-  String get analysisErrorMessage;
-
-  /// Titulo da secao com a distribuicao de sentimento.
-  ///
-  /// In pt, this message translates to:
-  /// **'Sentimento dos comentários'**
-  String get analysisSentimentSection;
-
-  /// Titulo da secao com os termos recorrentes.
-  ///
-  /// In pt, this message translates to:
-  /// **'Termos mais citados'**
-  String get analysisTermsSection;
-
-  /// Titulo da secao com comentarios representativos.
-  ///
-  /// In pt, this message translates to:
-  /// **'O que a audiência diz'**
-  String get analysisCommentsSection;
-
-  /// Rotulo do botao que gera um roteiro para o topico.
-  ///
-  /// In pt, this message translates to:
-  /// **'Gerar roteiro'**
-  String get generateScriptButton;
-
-  /// Rotulo do botao enquanto o roteiro esta sendo gerado.
-  ///
-  /// In pt, this message translates to:
-  /// **'Gerando roteiro…'**
-  String get generateScriptLoading;
-
-  /// Mensagem exibida quando a geracao do roteiro falha.
-  ///
-  /// In pt, this message translates to:
-  /// **'Não foi possível gerar o roteiro.'**
-  String get generateScriptError;
-
-  /// Titulo da aba com a lista de roteiros gerados.
-  ///
-  /// In pt, this message translates to:
-  /// **'Roteiros'**
-  String get scriptsTitle;
-
-  /// Mensagem exibida quando o carregamento dos roteiros falha.
-  ///
-  /// In pt, this message translates to:
-  /// **'Não foi possível carregar os roteiros.'**
-  String get scriptsErrorMessage;
-
-  /// Titulo do estado vazio da lista de roteiros.
-  ///
-  /// In pt, this message translates to:
-  /// **'Nenhum roteiro ainda'**
-  String get scriptsEmptyTitle;
-
-  /// Orientacao do estado vazio da lista de roteiros.
-  ///
-  /// In pt, this message translates to:
-  /// **'Escolha um tópico em alta e gere seu primeiro roteiro.'**
-  String get scriptsEmptyMessage;
-
-  /// Data de geracao de um roteiro na lista.
-  ///
-  /// In pt, this message translates to:
-  /// **'Gerado em {date}'**
-  String scriptsGeneratedOn(String date);
-
-  /// Titulo do AppBar da tela de um roteiro.
-  ///
-  /// In pt, this message translates to:
-  /// **'Roteiro'**
-  String get scriptTitle;
-
-  /// Mensagem exibida quando o carregamento do roteiro falha.
-  ///
-  /// In pt, this message translates to:
-  /// **'Não foi possível carregar o roteiro.'**
-  String get scriptErrorMessage;
-
-  /// Titulo da secao com a abertura do roteiro.
-  ///
-  /// In pt, this message translates to:
-  /// **'Gancho'**
-  String get scriptHookSection;
-
-  /// Titulo da secao com o corpo do roteiro.
-  ///
-  /// In pt, this message translates to:
-  /// **'Desenvolvimento'**
-  String get scriptDevelopmentSection;
-
-  /// Titulo da secao com o fechamento do roteiro.
-  ///
-  /// In pt, this message translates to:
-  /// **'Chamada para ação'**
-  String get scriptCtaSection;
-
-  /// Rotulo do botao que copia o roteiro.
-  ///
-  /// In pt, this message translates to:
-  /// **'Copiar'**
-  String get copyButton;
-
-  /// Rotulo do botao que gera uma nova versao do roteiro.
-  ///
-  /// In pt, this message translates to:
-  /// **'Regenerar'**
-  String get regenerateButton;
-
-  /// Confirmacao exibida apos copiar o roteiro.
-  ///
-  /// In pt, this message translates to:
-  /// **'Roteiro copiado'**
-  String get scriptCopied;
-
-  /// Mensagem exibida quando a regeneracao falha.
-  ///
-  /// In pt, this message translates to:
-  /// **'Não foi possível regenerar o roteiro.'**
-  String get regenerateError;
-
   /// Titulo da aba de perfil.
   ///
   /// In pt, this message translates to:
   /// **'Perfil'**
   String get profileTitle;
 
-  /// Mensagem exibida quando o carregamento do perfil falha.
+  /// Titulo da secao com os dados basicos do influenciador.
   ///
   /// In pt, this message translates to:
-  /// **'Não foi possível carregar o perfil.'**
-  String get profileErrorMessage;
+  /// **'Sobre'**
+  String get profileAboutSection;
 
-  /// Rotulo da estatistica de comentarios analisados.
+  /// Rotulo do nicho de conteudo.
   ///
   /// In pt, this message translates to:
-  /// **'Comentários analisados'**
-  String get profileCommentsAnalyzed;
+  /// **'Nicho'**
+  String get profileNicheLabel;
 
-  /// Rotulo da estatistica de roteiros gerados.
+  /// Rotulo da rede social principal.
   ///
   /// In pt, this message translates to:
-  /// **'Roteiros gerados'**
-  String get profileScriptsGenerated;
-
-  /// Titulo da secao com as redes sociais.
-  ///
-  /// In pt, this message translates to:
-  /// **'Plataformas conectadas'**
-  String get profilePlatformsSection;
-
-  /// Estado de uma plataforma ainda nao conectada.
-  ///
-  /// In pt, this message translates to:
-  /// **'Não conectado'**
-  String get profileNotConnected;
-
-  /// Rotulo do botao que inicia a conexao com uma plataforma.
-  ///
-  /// In pt, this message translates to:
-  /// **'Conectar'**
-  String get profileConnect;
-
-  /// Aviso exibido ao tentar conectar uma plataforma (mock).
-  ///
-  /// In pt, this message translates to:
-  /// **'A conexão com as plataformas chega em breve.'**
-  String get profileConnectSoon;
-
-  /// Titulo da secao com o tom de voz dos roteiros.
-  ///
-  /// In pt, this message translates to:
-  /// **'Estilo do roteiro'**
-  String get profileStyleSection;
-
-  /// Explicacao do campo de tom de voz.
-  ///
-  /// In pt, this message translates to:
-  /// **'Tom de voz usado pela IA ao escrever seus roteiros'**
-  String get profileStyleHint;
+  /// **'Plataforma principal'**
+  String get profilePlatformLabel;
 }
 
 class _AppLocalizationsDelegate

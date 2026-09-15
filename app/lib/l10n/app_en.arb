@@ -1,58 +1,13 @@
 {
   "@@locale": "en",
   "appTitle": "InfluencIA",
-
   "tabTrends": "Trends",
   "tabScripts": "Scripts",
   "tabProfile": "Profile",
   "comingSoonTitle": "Coming soon",
   "comingSoonMessage": "This part of the app is still being built.",
-
-  "retryButton": "Try again",
-  "environmentBadgeLabel": "Environment: {environment}",
-  "mentions": "{count, plural, one{{count} mention} other{{count} mentions}}",
-  "sentimentPositive": "Positive",
-  "sentimentNeutral": "Neutral",
-  "sentimentNegative": "Negative",
-
-  "trendsTitle": "Trends",
-  "trendsSubtitle": "Trending with your audience",
-  "trendsErrorMessage": "We could not load the trending topics.",
-
-  "analysisTitle": "Analysis",
-  "analysisErrorMessage": "We could not load the topic analysis.",
-  "analysisSentimentSection": "Comment sentiment",
-  "analysisTermsSection": "Most mentioned terms",
-  "analysisCommentsSection": "What your audience says",
-
-  "generateScriptButton": "Generate script",
-  "generateScriptLoading": "Generating script…",
-  "generateScriptError": "We could not generate the script.",
-
-  "scriptsTitle": "Scripts",
-  "scriptsErrorMessage": "We could not load the scripts.",
-  "scriptsEmptyTitle": "No scripts yet",
-  "scriptsEmptyMessage": "Pick a trending topic and generate your first script.",
-  "scriptsGeneratedOn": "Generated on {date}",
-
-  "scriptTitle": "Script",
-  "scriptErrorMessage": "We could not load the script.",
-  "scriptHookSection": "Hook",
-  "scriptDevelopmentSection": "Development",
-  "scriptCtaSection": "Call to action",
-  "copyButton": "Copy",
-  "regenerateButton": "Regenerate",
-  "scriptCopied": "Script copied",
-  "regenerateError": "We could not regenerate the script.",
-
   "profileTitle": "Profile",
-  "profileErrorMessage": "We could not load the profile.",
-  "profileCommentsAnalyzed": "Comments analyzed",
-  "profileScriptsGenerated": "Scripts generated",
-  "profilePlatformsSection": "Connected platforms",
-  "profileNotConnected": "Not connected",
-  "profileConnect": "Connect",
-  "profileConnectSoon": "Platform connections are coming soon.",
-  "profileStyleSection": "Script style",
-  "profileStyleHint": "Tone of voice the AI uses when writing your scripts"
+  "profileAboutSection": "About",
+  "profileNicheLabel": "Niche",
+  "profilePlatformLabel": "Main platform"
 }
