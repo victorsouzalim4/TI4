@@ -22,6 +22,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get tabProfile => 'Perfil';
 
   @override
+  String get comingSoonTitle => 'Em breve';
+
+  @override
+  String get comingSoonMessage =>
+      'Essa parte do app ainda está sendo construída.';
+
+  @override
   String get retryButton => 'Tentar novamente';
 
   @override

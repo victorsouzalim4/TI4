@@ -22,6 +22,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tabProfile => 'Profile';
 
   @override
+  String get comingSoonTitle => 'Coming soon';
+
+  @override
+  String get comingSoonMessage => 'This part of the app is still being built.';
+
+  @override
   String get retryButton => 'Try again';
 
   @override

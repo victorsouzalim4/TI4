@@ -122,6 +122,18 @@ abstract class AppLocalizations {
   /// **'Perfil'**
   String get tabProfile;
 
+  /// Titulo da tela de espera das abas ainda nao implementadas.
+  ///
+  /// In pt, this message translates to:
+  /// **'Em breve'**
+  String get comingSoonTitle;
+
+  /// Explicacao da tela de espera das abas ainda nao implementadas.
+  ///
+  /// In pt, this message translates to:
+  /// **'Essa parte do app ainda está sendo construída.'**
+  String get comingSoonMessage;
+
   /// Rotulo do botao que refaz o carregamento apos um erro.
   ///
   /// In pt, this message translates to:

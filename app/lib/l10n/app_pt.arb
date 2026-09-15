@@ -18,6 +18,15 @@
     "description": "Rotulo da aba de perfil na bottom bar."
   },
 
+  "comingSoonTitle": "Em breve",
+  "@comingSoonTitle": {
+    "description": "Titulo da tela de espera das abas ainda nao implementadas."
+  },
+  "comingSoonMessage": "Essa parte do app ainda está sendo construída.",
+  "@comingSoonMessage": {
+    "description": "Explicacao da tela de espera das abas ainda nao implementadas."
+  },
+
   "retryButton": "Tentar novamente",
   "@retryButton": {
     "description": "Rotulo do botao que refaz o carregamento apos um erro."

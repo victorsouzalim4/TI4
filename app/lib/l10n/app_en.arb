@@ -5,6 +5,8 @@
   "tabTrends": "Trends",
   "tabScripts": "Scripts",
   "tabProfile": "Profile",
+  "comingSoonTitle": "Coming soon",
+  "comingSoonMessage": "This part of the app is still being built.",
 
   "retryButton": "Try again",
   "environmentBadgeLabel": "Environment: {environment}",
