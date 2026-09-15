@@ -1,51 +1,43 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:influencia/features/profile/domain/entities/profile.dart';
 import 'package:influencia/features/profile/presentation/pages/profile_page.dart';
-import 'package:influencia/features/profile/presentation/providers/profile_providers.dart';
 
-import '../../../helpers/fakes.dart';
 import '../../../helpers/pump_app.dart';
 
 void main() {
+  const profile = Profile(
+    name: 'Marina Costa',
+    handle: '@marinacria',
+    niche: 'Criação de conteúdo',
+    mainPlatform: 'YouTube',
+  );
+
   group('ProfilePage', () {
-    testWidgets('renderiza dados, estatisticas e plataformas', (tester) async {
-      await tester.pumpApp(
-        const ProfilePage(),
-        overrides: [
-          profileDataSourceProvider.overrideWith(
-            (ref) => FakeProfileDataSource(),
-          ),
-        ],
-      );
-      await tester.settleProviders();
+    testWidgets('mostra os dados basicos do influenciador', (tester) async {
+      await tester.pumpApp(const ProfilePage(profile: profile));
 
       expect(find.text('Perfil'), findsOneWidget);
       expect(find.text('MC'), findsOneWidget);
       expect(find.text('Marina Costa'), findsOneWidget);
-      expect(find.text('12.480'), findsOneWidget);
-      expect(find.text('Comentários analisados'), findsOneWidget);
+      expect(find.text('@marinacria'), findsOneWidget);
+      expect(find.text('Criação de conteúdo'), findsOneWidget);
       expect(find.text('YouTube'), findsOneWidget);
-      expect(find.text('TikTok'), findsOneWidget);
-      expect(find.text('Não conectado'), findsOneWidget);
-      expect(find.text('Descontraído'), findsOneWidget);
-
-      await tester.tap(find.text('Conectar'));
-      await tester.pump();
-
-      expect(
-        find.text('A conexão com as plataformas chega em breve.'),
-        findsOneWidget,
-      );
     });
   });
 
   group('Profile.initials', () {
     test('usa a primeira letra do primeiro e do ultimo nome', () {
-      expect(fakeProfile.toEntity().initials, 'MC');
+      expect(profile.initials, 'MC');
     });
 
     test('nome unico gera uma letra', () {
-      final profile = fakeProfile.copyWith(name: 'Marina').toEntity();
-      expect(profile.initials, 'M');
+      const single = Profile(
+        name: 'Marina',
+        handle: '@marina',
+        niche: '',
+        mainPlatform: '',
+      );
+      expect(single.initials, 'M');
     });
   });
 }
