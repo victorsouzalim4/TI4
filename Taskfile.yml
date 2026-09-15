@@ -98,18 +98,6 @@ tasks:
     cmds:
       - flutter test --coverage
 
-  gen:
-    desc: Roda o build_runner (freezed/riverpod/json_serializable)
-    dir: '{{.APP_DIR}}'
-    cmds:
-      - dart run build_runner build --delete-conflicting-outputs
-
-  gen:watch:
-    desc: Roda o build_runner em modo watch
-    dir: '{{.APP_DIR}}'
-    cmds:
-      - dart run build_runner watch --delete-conflicting-outputs
-
   l10n:
     desc: Gera as classes de localização (gen-l10n)
     dir: '{{.APP_DIR}}'

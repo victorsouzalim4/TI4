@@ -1,12 +1,7 @@
 include: package:very_good_analysis/analysis_options.yaml
 
-plugins:
-  riverpod_lint: ^3.1.9
-
 analyzer:
   exclude:
-    - "**/*.g.dart"
-    - "**/*.freezed.dart"
     - "lib/l10n/generated/**"
     - build/**
     - android/**
