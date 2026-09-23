@@ -2,6 +2,9 @@
 abstract final class AppConstants {
   static const String appName = 'InfluencIA';
 
+  /// Versao exibida na tela Sobre (manter igual ao pubspec.yaml).
+  static const String appVersion = '1.0.0';
+
   static const Duration connectTimeout = Duration(seconds: 15);
 
   static const Duration receiveTimeout = Duration(seconds: 15);

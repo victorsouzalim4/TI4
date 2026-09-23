@@ -160,4 +160,90 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get profileStyleHint =>
       'Tom de voz usado pela IA ao escrever seus roteiros';
+
+  @override
+  String get profileAboutTooltip => 'Sobre o app';
+
+  @override
+  String get welcomeTagline =>
+      'Descubra o que sua audiência quer ver e transforme em roteiros.';
+
+  @override
+  String get welcomeExplore => 'Explorar tendências';
+
+  @override
+  String get welcomeSignUp => 'Criar conta';
+
+  @override
+  String get welcomeNoAccountHint => 'Você pode navegar sem criar conta.';
+
+  @override
+  String get welcomeAbout => 'Sobre o app';
+
+  @override
+  String get signUpTitle => 'Criar conta';
+
+  @override
+  String get signUpSubtitle => 'Preencha seus dados para começar.';
+
+  @override
+  String get signUpNameLabel => 'Nome';
+
+  @override
+  String get signUpEmailLabel => 'E-mail';
+
+  @override
+  String get signUpPasswordLabel => 'Senha';
+
+  @override
+  String get signUpNameRequired => 'Informe seu nome.';
+
+  @override
+  String get signUpEmailInvalid => 'Informe um e-mail válido.';
+
+  @override
+  String signUpPasswordTooShort(int min) {
+    return 'A senha precisa ter pelo menos $min caracteres.';
+  }
+
+  @override
+  String get signUpSubmit => 'Cadastrar';
+
+  @override
+  String get signUpSuccess => 'Conta criada com sucesso.';
+
+  @override
+  String get aboutTitle => 'Sobre o app';
+
+  @override
+  String aboutVersion(String version) {
+    return 'Versão $version';
+  }
+
+  @override
+  String get aboutDescription =>
+      'O InfluencIA lê os comentários da sua audiência, mostra os tópicos em alta e ajuda a transformar isso em roteiros de conteúdo.';
+
+  @override
+  String get aboutHowItWorksSection => 'Como funciona';
+
+  @override
+  String get aboutStep1 => 'Conecte suas redes sociais.';
+
+  @override
+  String get aboutStep2 =>
+      'Veja os tópicos em alta e o sentimento dos comentários.';
+
+  @override
+  String get aboutStep3 => 'Gere um roteiro a partir do tópico escolhido.';
+
+  @override
+  String get aboutProjectSection => 'Projeto';
+
+  @override
+  String get aboutProjectName => 'Trabalho Interdisciplinar IV';
+
+  @override
+  String get aboutProjectDescription =>
+      'PUC Minas. O backend Vortex ainda está em construção; os dados exibidos são simulados.';
 }

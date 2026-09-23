@@ -367,6 +367,162 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Tom de voz usado pela IA ao escrever seus roteiros'**
   String get profileStyleHint;
+
+  /// Tooltip do icone que abre a tela Sobre a partir do perfil.
+  ///
+  /// In pt, this message translates to:
+  /// **'Sobre o app'**
+  String get profileAboutTooltip;
+
+  /// Frase de apresentacao na tela inicial.
+  ///
+  /// In pt, this message translates to:
+  /// **'Descubra o que sua audiência quer ver e transforme em roteiros.'**
+  String get welcomeTagline;
+
+  /// Botao da tela inicial que entra no app sem conta.
+  ///
+  /// In pt, this message translates to:
+  /// **'Explorar tendências'**
+  String get welcomeExplore;
+
+  /// Botao da tela inicial que abre o cadastro.
+  ///
+  /// In pt, this message translates to:
+  /// **'Criar conta'**
+  String get welcomeSignUp;
+
+  /// Aviso de que o cadastro e opcional.
+  ///
+  /// In pt, this message translates to:
+  /// **'Você pode navegar sem criar conta.'**
+  String get welcomeNoAccountHint;
+
+  /// Link da tela inicial para a tela Sobre.
+  ///
+  /// In pt, this message translates to:
+  /// **'Sobre o app'**
+  String get welcomeAbout;
+
+  /// Titulo da tela de cadastro.
+  ///
+  /// In pt, this message translates to:
+  /// **'Criar conta'**
+  String get signUpTitle;
+
+  /// Instrucao curta no topo do formulario de cadastro.
+  ///
+  /// In pt, this message translates to:
+  /// **'Preencha seus dados para começar.'**
+  String get signUpSubtitle;
+
+  /// Rotulo do campo de nome.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nome'**
+  String get signUpNameLabel;
+
+  /// Rotulo do campo de e-mail.
+  ///
+  /// In pt, this message translates to:
+  /// **'E-mail'**
+  String get signUpEmailLabel;
+
+  /// Rotulo do campo de senha.
+  ///
+  /// In pt, this message translates to:
+  /// **'Senha'**
+  String get signUpPasswordLabel;
+
+  /// Erro de validacao do nome vazio.
+  ///
+  /// In pt, this message translates to:
+  /// **'Informe seu nome.'**
+  String get signUpNameRequired;
+
+  /// Erro de validacao do e-mail.
+  ///
+  /// In pt, this message translates to:
+  /// **'Informe um e-mail válido.'**
+  String get signUpEmailInvalid;
+
+  /// Erro de validacao da senha curta.
+  ///
+  /// In pt, this message translates to:
+  /// **'A senha precisa ter pelo menos {min} caracteres.'**
+  String signUpPasswordTooShort(int min);
+
+  /// Botao que envia o cadastro.
+  ///
+  /// In pt, this message translates to:
+  /// **'Cadastrar'**
+  String get signUpSubmit;
+
+  /// Aviso exibido apos o cadastro (mock).
+  ///
+  /// In pt, this message translates to:
+  /// **'Conta criada com sucesso.'**
+  String get signUpSuccess;
+
+  /// Titulo da tela Sobre.
+  ///
+  /// In pt, this message translates to:
+  /// **'Sobre o app'**
+  String get aboutTitle;
+
+  /// Versao do aplicativo na tela Sobre.
+  ///
+  /// In pt, this message translates to:
+  /// **'Versão {version}'**
+  String aboutVersion(String version);
+
+  /// Descricao do app na tela Sobre.
+  ///
+  /// In pt, this message translates to:
+  /// **'O InfluencIA lê os comentários da sua audiência, mostra os tópicos em alta e ajuda a transformar isso em roteiros de conteúdo.'**
+  String get aboutDescription;
+
+  /// Titulo da secao com os passos de uso.
+  ///
+  /// In pt, this message translates to:
+  /// **'Como funciona'**
+  String get aboutHowItWorksSection;
+
+  /// Primeiro passo de uso.
+  ///
+  /// In pt, this message translates to:
+  /// **'Conecte suas redes sociais.'**
+  String get aboutStep1;
+
+  /// Segundo passo de uso.
+  ///
+  /// In pt, this message translates to:
+  /// **'Veja os tópicos em alta e o sentimento dos comentários.'**
+  String get aboutStep2;
+
+  /// Terceiro passo de uso.
+  ///
+  /// In pt, this message translates to:
+  /// **'Gere um roteiro a partir do tópico escolhido.'**
+  String get aboutStep3;
+
+  /// Titulo da secao sobre o contexto academico.
+  ///
+  /// In pt, this message translates to:
+  /// **'Projeto'**
+  String get aboutProjectSection;
+
+  /// Nome da disciplina em que o app e desenvolvido.
+  ///
+  /// In pt, this message translates to:
+  /// **'Trabalho Interdisciplinar IV'**
+  String get aboutProjectName;
+
+  /// Contexto do projeto e aviso de dados simulados.
+  ///
+  /// In pt, this message translates to:
+  /// **'PUC Minas. O backend Vortex ainda está em construção; os dados exibidos são simulados.'**
+  String get aboutProjectDescription;
 }
 
 class _AppLocalizationsDelegate

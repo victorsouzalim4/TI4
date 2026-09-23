@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:influencia/app/router.dart';
 import 'package:influencia/app/theme.dart';
 import 'package:influencia/core/extensions/context_extensions.dart';
 import 'package:influencia/features/profile/domain/entities/profile.dart';
@@ -16,7 +18,16 @@ class ProfilePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final profileAsync = ref.watch(profileProvider);
     return Scaffold(
-      appBar: AppBar(title: Text(context.l10n.profileTitle)),
+      appBar: AppBar(
+        title: Text(context.l10n.profileTitle),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            tooltip: context.l10n.profileAboutTooltip,
+            onPressed: () => context.pushNamed(AppRoutes.aboutName),
+          ),
+        ],
+      ),
       body: AsyncView(
         value: profileAsync,
         errorMessage: context.l10n.profileErrorMessage,

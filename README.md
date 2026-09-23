@@ -19,6 +19,14 @@ Dicas:
 
 ## Telas e navegação
 
+O app abre em uma tela inicial de boas-vindas. Ninguém precisa de conta para usar: dá para entrar direto nas abas, criar uma conta (formulário sem backend por enquanto) ou ler sobre o app.
+
+| Rota | Tela | O que faz |
+| --- | --- | --- |
+| `/` | Início | Nome e proposta do app; botões **Explorar tendências**, **Criar conta** e **Sobre o app** |
+| `/signup` | Criar conta | Nome, e-mail e senha com validação básica; ao cadastrar mostra um aviso e entra nas Tendências |
+| `/about` | Sobre o app | Versão, descrição, passos de uso e contexto do TI4. Também abre pelo ícone (i) na aba Perfil |
+
 Três abas na bottom bar (`animated_bottom_navigation_bar`), cada uma com sua própria pilha (`StatefulShellRoute` do go_router):
 
 | Rota | Tela | O que faz |
@@ -39,6 +47,9 @@ app/lib/
 ├── app/                 # MaterialApp.router, tema (AppColors/AppTheme), go_router, AppShell (bottom bar)
 ├── core/                # config por dart-define, errors, network (dio + interceptors), utils (Result + guard), extensions
 ├── features/
+│   ├── welcome/         # tela inicial (só presentation)
+│   ├── auth/            # cadastro (só presentation; sem backend ainda)
+│   ├── about/           # sobre o app (só presentation)
 │   ├── topics/          # tendências + análise de tópico
 │   ├── scripts/         # roteiros: lista, detalhe, geração/regeneração
 │   └── profile/         # perfil e plataformas conectadas

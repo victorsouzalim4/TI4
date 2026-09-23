@@ -202,5 +202,122 @@
   "profileStyleHint": "Tom de voz usado pela IA ao escrever seus roteiros",
   "@profileStyleHint": {
     "description": "Explicacao do campo de tom de voz."
+  },
+  "profileAboutTooltip": "Sobre o app",
+  "@profileAboutTooltip": {
+    "description": "Tooltip do icone que abre a tela Sobre a partir do perfil."
+  },
+
+  "welcomeTagline": "Descubra o que sua audiência quer ver e transforme em roteiros.",
+  "@welcomeTagline": {
+    "description": "Frase de apresentacao na tela inicial."
+  },
+  "welcomeExplore": "Explorar tendências",
+  "@welcomeExplore": {
+    "description": "Botao da tela inicial que entra no app sem conta."
+  },
+  "welcomeSignUp": "Criar conta",
+  "@welcomeSignUp": {
+    "description": "Botao da tela inicial que abre o cadastro."
+  },
+  "welcomeNoAccountHint": "Você pode navegar sem criar conta.",
+  "@welcomeNoAccountHint": {
+    "description": "Aviso de que o cadastro e opcional."
+  },
+  "welcomeAbout": "Sobre o app",
+  "@welcomeAbout": {
+    "description": "Link da tela inicial para a tela Sobre."
+  },
+
+  "signUpTitle": "Criar conta",
+  "@signUpTitle": {
+    "description": "Titulo da tela de cadastro."
+  },
+  "signUpSubtitle": "Preencha seus dados para começar.",
+  "@signUpSubtitle": {
+    "description": "Instrucao curta no topo do formulario de cadastro."
+  },
+  "signUpNameLabel": "Nome",
+  "@signUpNameLabel": {
+    "description": "Rotulo do campo de nome."
+  },
+  "signUpEmailLabel": "E-mail",
+  "@signUpEmailLabel": {
+    "description": "Rotulo do campo de e-mail."
+  },
+  "signUpPasswordLabel": "Senha",
+  "@signUpPasswordLabel": {
+    "description": "Rotulo do campo de senha."
+  },
+  "signUpNameRequired": "Informe seu nome.",
+  "@signUpNameRequired": {
+    "description": "Erro de validacao do nome vazio."
+  },
+  "signUpEmailInvalid": "Informe um e-mail válido.",
+  "@signUpEmailInvalid": {
+    "description": "Erro de validacao do e-mail."
+  },
+  "signUpPasswordTooShort": "A senha precisa ter pelo menos {min} caracteres.",
+  "@signUpPasswordTooShort": {
+    "description": "Erro de validacao da senha curta.",
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "signUpSubmit": "Cadastrar",
+  "@signUpSubmit": {
+    "description": "Botao que envia o cadastro."
+  },
+  "signUpSuccess": "Conta criada com sucesso.",
+  "@signUpSuccess": {
+    "description": "Aviso exibido apos o cadastro (mock)."
+  },
+
+  "aboutTitle": "Sobre o app",
+  "@aboutTitle": {
+    "description": "Titulo da tela Sobre."
+  },
+  "aboutVersion": "Versão {version}",
+  "@aboutVersion": {
+    "description": "Versao do aplicativo na tela Sobre.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutDescription": "O InfluencIA lê os comentários da sua audiência, mostra os tópicos em alta e ajuda a transformar isso em roteiros de conteúdo.",
+  "@aboutDescription": {
+    "description": "Descricao do app na tela Sobre."
+  },
+  "aboutHowItWorksSection": "Como funciona",
+  "@aboutHowItWorksSection": {
+    "description": "Titulo da secao com os passos de uso."
+  },
+  "aboutStep1": "Conecte suas redes sociais.",
+  "@aboutStep1": {
+    "description": "Primeiro passo de uso."
+  },
+  "aboutStep2": "Veja os tópicos em alta e o sentimento dos comentários.",
+  "@aboutStep2": {
+    "description": "Segundo passo de uso."
+  },
+  "aboutStep3": "Gere um roteiro a partir do tópico escolhido.",
+  "@aboutStep3": {
+    "description": "Terceiro passo de uso."
+  },
+  "aboutProjectSection": "Projeto",
+  "@aboutProjectSection": {
+    "description": "Titulo da secao sobre o contexto academico."
+  },
+  "aboutProjectName": "Trabalho Interdisciplinar IV",
+  "@aboutProjectName": {
+    "description": "Nome da disciplina em que o app e desenvolvido."
+  },
+  "aboutProjectDescription": "PUC Minas. O backend Vortex ainda está em construção; os dados exibidos são simulados.",
+  "@aboutProjectDescription": {
+    "description": "Contexto do projeto e aviso de dados simulados."
   }
 }

@@ -157,4 +157,89 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get profileStyleHint =>
       'Tone of voice the AI uses when writing your scripts';
+
+  @override
+  String get profileAboutTooltip => 'About the app';
+
+  @override
+  String get welcomeTagline =>
+      'Find out what your audience wants to watch and turn it into scripts.';
+
+  @override
+  String get welcomeExplore => 'Explore trends';
+
+  @override
+  String get welcomeSignUp => 'Create account';
+
+  @override
+  String get welcomeNoAccountHint => 'You can browse without an account.';
+
+  @override
+  String get welcomeAbout => 'About the app';
+
+  @override
+  String get signUpTitle => 'Create account';
+
+  @override
+  String get signUpSubtitle => 'Fill in your details to get started.';
+
+  @override
+  String get signUpNameLabel => 'Name';
+
+  @override
+  String get signUpEmailLabel => 'Email';
+
+  @override
+  String get signUpPasswordLabel => 'Password';
+
+  @override
+  String get signUpNameRequired => 'Enter your name.';
+
+  @override
+  String get signUpEmailInvalid => 'Enter a valid email.';
+
+  @override
+  String signUpPasswordTooShort(int min) {
+    return 'Password must have at least $min characters.';
+  }
+
+  @override
+  String get signUpSubmit => 'Sign up';
+
+  @override
+  String get signUpSuccess => 'Account created.';
+
+  @override
+  String get aboutTitle => 'About the app';
+
+  @override
+  String aboutVersion(String version) {
+    return 'Version $version';
+  }
+
+  @override
+  String get aboutDescription =>
+      'InfluencIA reads your audience\'s comments, shows trending topics and helps turn them into content scripts.';
+
+  @override
+  String get aboutHowItWorksSection => 'How it works';
+
+  @override
+  String get aboutStep1 => 'Connect your social networks.';
+
+  @override
+  String get aboutStep2 => 'See trending topics and comment sentiment.';
+
+  @override
+  String get aboutStep3 => 'Generate a script from the chosen topic.';
+
+  @override
+  String get aboutProjectSection => 'Project';
+
+  @override
+  String get aboutProjectName => 'Interdisciplinary Project IV';
+
+  @override
+  String get aboutProjectDescription =>
+      'PUC Minas. The Vortex backend is still under construction; the data shown is simulated.';
 }

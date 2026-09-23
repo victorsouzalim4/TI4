@@ -52,5 +52,34 @@
   "profileConnect": "Connect",
   "profileConnectSoon": "Platform connections are coming soon.",
   "profileStyleSection": "Script style",
-  "profileStyleHint": "Tone of voice the AI uses when writing your scripts"
+  "profileStyleHint": "Tone of voice the AI uses when writing your scripts",
+  "profileAboutTooltip": "About the app",
+
+  "welcomeTagline": "Find out what your audience wants to watch and turn it into scripts.",
+  "welcomeExplore": "Explore trends",
+  "welcomeSignUp": "Create account",
+  "welcomeNoAccountHint": "You can browse without an account.",
+  "welcomeAbout": "About the app",
+
+  "signUpTitle": "Create account",
+  "signUpSubtitle": "Fill in your details to get started.",
+  "signUpNameLabel": "Name",
+  "signUpEmailLabel": "Email",
+  "signUpPasswordLabel": "Password",
+  "signUpNameRequired": "Enter your name.",
+  "signUpEmailInvalid": "Enter a valid email.",
+  "signUpPasswordTooShort": "Password must have at least {min} characters.",
+  "signUpSubmit": "Sign up",
+  "signUpSuccess": "Account created.",
+
+  "aboutTitle": "About the app",
+  "aboutVersion": "Version {version}",
+  "aboutDescription": "InfluencIA reads your audience's comments, shows trending topics and helps turn them into content scripts.",
+  "aboutHowItWorksSection": "How it works",
+  "aboutStep1": "Connect your social networks.",
+  "aboutStep2": "See trending topics and comment sentiment.",
+  "aboutStep3": "Generate a script from the chosen topic.",
+  "aboutProjectSection": "Project",
+  "aboutProjectName": "Interdisciplinary Project IV",
+  "aboutProjectDescription": "PUC Minas. The Vortex backend is still under construction; the data shown is simulated."
 }
